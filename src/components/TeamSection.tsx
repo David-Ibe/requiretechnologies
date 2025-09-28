@@ -9,7 +9,7 @@ export default function TeamSection() {
     { 
       name: "Chimaobi David Ibe", 
       role: "Founder",
-      image: "/images/team/chimaobi-david-ibe.jpg"
+      image: "/images/team/chimaobi-david-ibe.JPG"
     }
   ]
 
@@ -31,12 +31,15 @@ export default function TeamSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center">
-                <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden shadow-lg">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-4 overflow-hidden shadow-lg border-2 border-white/20 relative">
                   <img 
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-2xl opacity-0 hover:opacity-100 transition-opacity">
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </div>
                 </div>
                 <h3 className="font-bold text-white text-xl mb-2">{member.name}</h3>
                 <p className="text-white/90">{member.role}</p>

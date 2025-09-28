@@ -7,6 +7,7 @@ import ServiceCard from '@/components/ServiceCard'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
+import AnimatedTechCarousel from '@/components/AnimatedTechCarousel'
 import { CheckCircle, Users, Award } from 'lucide-react'
 
 export default function Home() {
@@ -95,19 +96,11 @@ export default function Home() {
               </a>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">50+</div>
-                <div className="text-white/80">Projects Completed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">100%</div>
-                <div className="text-white/80">Client Satisfaction</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-white/80">Support Available</div>
-              </div>
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center">
+                Our Technology Expertise
+              </h3>
+              <AnimatedTechCarousel />
             </div>
           </div>
         </div>
