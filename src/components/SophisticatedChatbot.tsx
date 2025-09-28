@@ -341,7 +341,7 @@ export default function SophisticatedChatbot() {
                             <button
                               key={index}
                               onClick={() => handleQuickReply(reply)}
-                              className="text-xs bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 text-accent border border-accent/30 hover:border-accent/50 px-3 py-2 rounded-full transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                              className="text-xs bg-transparent hover:bg-gray-700/50 text-white border border-gray-600 hover:border-accent px-3 py-2 rounded-full transition-all duration-200 font-medium shadow-sm hover:shadow-md"
                             >
                               {reply}
                             </button>
