@@ -106,7 +106,7 @@ export default function About() {
               <div className="card-dark">
                 <h3 className="text-2xl font-bold text-white mb-4">Our Mission</h3>
                 <p className="text-lg text-white/90 leading-relaxed">
-                  To deliver the strategic technology and expertise required for Africa's leading organizations to transition into intelligent, AI-first enterprises.
+                  To deliver the strategic technology and expertise required for Africa&apos;s leading organizations to transition into intelligent, AI-first enterprises.
                 </p>
               </div>
               

@@ -113,7 +113,7 @@ export default function Services() {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Get Started?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-              Let's discuss your project requirements and create a solution that drives real results.
+              Let&apos;s discuss your project requirements and create a solution that drives real results.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

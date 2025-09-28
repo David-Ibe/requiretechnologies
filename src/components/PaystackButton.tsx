@@ -18,8 +18,8 @@ export default function PaystackButton({ email }: PaystackButtonProps) {
 
     setIsLoading(true)
     
-    if (window.PaystackPop) {
-      const handler = window.PaystackPop.setup({
+    if ((window as any).PaystackPop) {
+      const handler = (window as any).PaystackPop.setup({
         key: 'pk_test_your_paystack_public_key', // Replace with your actual Paystack public key
         email: email,
         amount: 10000 * 100, // ₦10,000 in kobo
