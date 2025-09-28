@@ -8,7 +8,7 @@ interface Message {
   text: string
   sender: 'user' | 'bot'
   timestamp: Date
-  type?: 'text' | 'quick_reply' | 'service_card'
+  type?: 'text' | 'quick_reply' | 'service_card' | 'contact_info'
   quickReplies?: string[]
   serviceInfo?: {
     title: string
@@ -75,78 +75,82 @@ export default function SophisticatedChatbot() {
 
   const generateBotResponse = (userMessage: string): Message => {
     const lowerMessage = userMessage.toLowerCase()
-    
-    if (lowerMessage.includes('service') || lowerMessage.includes('what do you do')) {
+
+    // 1. SERVICES Intent
+    if (lowerMessage.includes('service') || lowerMessage.includes('what do you do') || lowerMessage.includes('offerings')) {
       return {
         id: Date.now().toString(),
-        text: "We offer comprehensive digital transformation solutions:",
+        text: "We provide full-spectrum Digital Transformation solutions across four core areas:",
         sender: 'bot',
         timestamp: new Date(),
         type: 'service_card',
         serviceInfo: {
-          title: "Our Core Services",
-          description: "Full-spectrum digital transformation solutions",
+          title: "Require Technologies' Core Capabilities",
+          description: "From strategy to deployment, we build secure and scalable digital futures.",
           features: [
-            "🤖 AI Solutions - Conversational AI for banking sector",
-            "💻 Custom Software - Web & mobile applications",
-            "🔒 Cybersecurity - Enterprise security solutions",
-            "📊 Data Analytics - Business intelligence & insights"
+            "🤖 Specialized AI & Conversational Platforms (Banking Focus)",
+            "💻 Custom Software, Web & Mobile Development",
+            "🔒 Cybersecurity & Cloud Infrastructure",
+            "📊 Data Analytics, BI & Strategic Insights"
           ]
         }
       }
     }
-    
-    if (lowerMessage.includes('quote') || lowerMessage.includes('price') || lowerMessage.includes('cost')) {
+
+    // 2. CONTACT Intent (Returns the new type)
+    if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email') || lowerMessage.includes('human')) {
       return {
         id: Date.now().toString(),
-        text: "I'd be happy to help you get a project quote! To provide an accurate estimate, I need to understand your requirements better.",
+        text: "Here are the best ways to reach our team for immediate assistance or strategic inquiries:",
+        sender: 'bot',
+        timestamp: new Date(),
+        type: 'contact_info'
+      }
+    }
+
+    // 3. QUOTE/PRICE Intent
+    if (lowerMessage.includes('quote') || lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
+      return {
+        id: Date.now().toString(),
+        text: "To give you an accurate estimate, please specify the type of solution you're interested in:",
         sender: 'bot',
         timestamp: new Date(),
         quickReplies: [
-          "Web Development Project",
-          "Mobile App Development",
-          "AI/Chatbot Implementation",
-          "Cybersecurity Services"
+          "AI/Chatbot Project Quote",
+          "Custom Software Development Quote",
+          "Cybersecurity Audit/Service Quote",
+          "Speak with a Business Analyst"
+        ]
+      }
+    }
+
+    // 4. PORTFOLIO Intent
+    if (lowerMessage.includes('portfolio') || lowerMessage.includes('examples') || lowerMessage.includes('work') || lowerMessage.includes('case studies')) {
+      return {
+        id: Date.now().toString(),
+        text: "We specialize in high-impact projects. You can explore our successes here:",
+        sender: 'bot',
+        timestamp: new Date(),
+        quickReplies: [
+          "Banking AI Case Studies",
+          "E-commerce Platform Success Story",
+          "Fintech App Portfolio",
+          "Go back to services"
         ]
       }
     }
     
-    if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email')) {
-      return {
-        id: Date.now().toString(),
-        text: "Here's how you can reach us:",
-        sender: 'bot',
-        timestamp: new Date(),
-        type: 'text'
-      }
-    }
-    
-    if (lowerMessage.includes('portfolio') || lowerMessage.includes('examples') || lowerMessage.includes('work')) {
-      return {
-        id: Date.now().toString(),
-        text: "We've successfully delivered projects for leading enterprises across West Africa. Our portfolio includes:",
-        sender: 'bot',
-        timestamp: new Date(),
-        quickReplies: [
-          "Banking AI Solutions",
-          "E-commerce Platforms",
-          "Fintech Applications",
-          "Healthcare Systems"
-        ]
-      }
-    }
-    
-    // Default response
+    // 5. DEFAULT/FALLBACK Response
     return {
       id: Date.now().toString(),
-      text: "That's interesting! I'd love to help you further. Could you tell me more about your specific needs?",
+      text: "I'm a highly efficient AI, but I work best with clear intentions! Could you phrase your request differently, or select from the options below?",
       sender: 'bot',
       timestamp: new Date(),
       quickReplies: [
-        "I need AI solutions",
-        "Web development project",
-        "Mobile app development",
-        "Speak with a human"
+        "Tell me about your services",
+        "I need a project quote",
+        "Contact information",
+        "Portfolio examples"
       ]
     }
   }
@@ -237,20 +241,23 @@ export default function SophisticatedChatbot() {
                         </div>
                       )}
                       
-                      {/* Contact Info */}
-                      {message.text.includes("Here's how you can reach us") && (
-                        <div className="mt-3 space-y-2">
-                          <div className="flex items-center gap-2 text-xs">
-                            <Phone className="w-3 h-3" />
-                            <span>07063716221</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-xs">
-                            <Mail className="w-3 h-3" />
-                            <span>info@requiretechnologies.com</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-xs">
-                            <ExternalLink className="w-3 h-3" />
-                            <span>www.requiretechnologies.com</span>
+                      {/* Contact Info Card (New Perfect Response) */}
+                      {message.type === 'contact_info' && (
+                        <div className="mt-3 p-3 bg-primary/10 rounded-lg text-gray-800">
+                          <h4 className="font-semibold text-sm mb-2">Connect Directly</h4>
+                          <div className="space-y-2 text-xs">
+                            <a href="tel:+2347063716221" className="flex items-center gap-2 hover:underline">
+                              <Phone className="w-3 h-3 text-primary" />
+                              <span>+234 706 371 6221 (Phone/WhatsApp)</span>
+                            </a>
+                            <a href="mailto:info@requiretechnologies.com" className="flex items-center gap-2 hover:underline">
+                              <Mail className="w-3 h-3 text-primary" />
+                              <span>info@requiretechnologies.com</span>
+                            </a>
+                            <a href="/contact" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:underline">
+                              <ExternalLink className="w-3 h-3 text-primary" />
+                              <span>Request a Call Back (Form)</span>
+                            </a>
                           </div>
                         </div>
                       )}
