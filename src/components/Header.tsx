@@ -8,8 +8,18 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-transparent backdrop-blur-md text-white sticky top-0 z-50 shadow-lg border-b border-white/20">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header 
+      className="bg-transparent backdrop-blur-md text-white sticky top-0 z-50 shadow-lg border-b border-white/20 relative"
+      style={{
+        backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center relative z-10">
         <div className="flex items-center space-x-3">
           <Link href="/" className="text-2xl font-bold hover:text-accent transition-colors text-white">
             Require Technologies
@@ -41,8 +51,18 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-transparent backdrop-blur-md border-t border-white/20">
-          <div className="container mx-auto px-4 py-6 space-y-4">
+        <nav 
+          className="md:hidden border-t border-white/20 relative"
+          style={{
+            backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="container mx-auto px-4 py-6 space-y-4 relative z-10">
             <Link 
               href="/" 
               className="block hover:text-accent transition-colors font-medium py-2"
