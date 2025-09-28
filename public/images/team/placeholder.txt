@@ -1,0 +1,15 @@
+Placeholder for team photos:
+
+Required files:
+- ceo.jpg (CEO & Lead Developer headshot)
+- cto.jpg (CTO & AI Specialist headshot)  
+- mobile-lead.jpg (Lead Mobile Developer headshot)
+- designer.jpg (UX/UI Designer headshot)
+- team-group.jpg (Group photo of the entire team)
+- office-workspace.jpg (Office/workspace environment photo)
+
+Specifications:
+- Size: 400x400px minimum
+- Format: JPG
+- Quality: Professional headshots with consistent lighting
+- Background: Neutral or branded background

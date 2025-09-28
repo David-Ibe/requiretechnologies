@@ -1,0 +1,15 @@
+Placeholder for portfolio project images:
+
+Required files:
+- banking-ai.jpg (Nigerian Banking AI Assistant project)
+- ecommerce.jpg (E-Commerce Platform project)
+- fintech-app.jpg (Fintech Mobile App project)
+- iot-agriculture.jpg (IoT Smart Agriculture project)
+- healthcare.jpg (Healthcare Management System project)
+- marketing-dashboard.jpg (Digital Marketing Dashboard project)
+
+Specifications:
+- Size: 600x400px
+- Format: JPG or PNG
+- Content: Screenshots, mockups, or interface designs
+- Quality: High-resolution, professional presentation

@@ -1,0 +1,16 @@
+Placeholder for client testimonial photos:
+
+Required files:
+- sarah-johnson.jpg (CEO, Lagos Retail Co.)
+- michael-adebayo.jpg (Founder & CTO, PayFast NG)
+- fatima-ibrahim.jpg (Medical Director, MedCare Clinic)
+- david-okonkwo.jpg (Operations Manager, AgriTech Solutions)
+- grace-williams.jpg (Marketing Director, Digital Marketing Pro)
+- james-okafor.jpg (IT Director, Nigerian Bank Ltd)
+
+Specifications:
+- Size: 200x200px
+- Format: JPG
+- Content: Professional headshots
+- Style: Consistent lighting and background
+- Permission: Ensure clients consent to photo usage
