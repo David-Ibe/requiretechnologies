@@ -81,20 +81,20 @@ export default function Home() {
               Join leading enterprises across West Africa who trust Require Technologies for their digital transformation journey.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a 
-                href="/contact" 
-                className="bg-accent text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Start Your Project
-              </a>
-              <a 
-                href="/services" 
-                className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
-              >
-                Explore Services
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a 
+                  href="/contact" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Start Your Project
+                </a>
+                <a 
+                  href="/services" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Explore Services
+                </a>
+              </div>
             
             <div className="mt-12">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">

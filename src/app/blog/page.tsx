@@ -227,20 +227,20 @@ export default function Blog() {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
-              >
-                Get in Touch
-              </a>
-              <a 
-                href="/services" 
-                className="bg-accent text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Explore Our Services
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a 
+                  href="/contact" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Get in Touch
+                </a>
+                <a 
+                  href="/services" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Explore Our Services
+                </a>
+              </div>
           </div>
         </div>
       </section>

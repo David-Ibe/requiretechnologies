@@ -116,20 +116,20 @@ export default function Services() {
               Let&apos;s discuss your project requirements and create a solution that drives real results.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a 
-                href="/contact" 
-                className="bg-accent text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Start Your Project
-              </a>
-              <a 
-                href="/about" 
-                className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
-              >
-                Learn More About Us
-              </a>
-            </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a 
+                  href="/contact" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Start Your Project
+                </a>
+                <a 
+                  href="/about" 
+                  className="bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-semibold rounded-lg hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
+                >
+                  Learn More About Us
+                </a>
+              </div>
             
             <div className="text-center">
               <p className="text-white/80 mb-4">Or get in touch directly:</p>
