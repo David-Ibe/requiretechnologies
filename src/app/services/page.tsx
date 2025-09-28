@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ServiceCard from '@/components/ServiceCard'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 
 export default function Services() {
   return (
@@ -146,7 +146,7 @@ export default function Services() {
         </div>
       </section>
 
-      <WhatsAppButton />
+        <SophisticatedChatbot />
       <Footer />
     </div>
   )

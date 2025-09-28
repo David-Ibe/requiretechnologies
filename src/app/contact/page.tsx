@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 
 export default function Contact() {
   return (
@@ -77,7 +77,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <WhatsAppButton />
+        <SophisticatedChatbot />
       <Footer />
     </div>
   )

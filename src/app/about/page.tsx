@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import TeamSection from '@/components/TeamSection'
 
 export default function About() {
@@ -167,7 +167,7 @@ export default function About() {
 
       <TeamSection />
 
-      <WhatsAppButton />
+        <SophisticatedChatbot />
       <Footer />
     </div>
   )

@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import Link from 'next/link'
 
 export default function Blog() {
@@ -293,7 +293,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <WhatsAppButton />
+        <SophisticatedChatbot />
       <Footer />
     </div>
   )
