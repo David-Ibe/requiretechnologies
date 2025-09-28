@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Linkedin, Twitter, MessageCircle, ArrowRight } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter, MessageCircle, ArrowRight } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -24,27 +24,34 @@ export default function Footer() {
                   A full-spectrum Digital Transformation and Technology Solutions provider. We empower enterprises across West Africa with secure, scalable, and innovative technology solutions.
                 </p>
             <div className="flex space-x-4">
+                <Link 
+                  href="https://www.linkedin.com/company/require-technologies-limited" 
+                  target="_blank" 
+                  className="bg-white/10 hover:bg-accent/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </Link>
               <Link 
-                href="https://linkedin.com" 
+                href="https://www.facebook.com/RequireTechnologiesLimited" 
                 target="_blank" 
                 className="bg-white/10 hover:bg-accent/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
               >
-                <Linkedin className="w-5 h-5" />
+                <Facebook className="w-5 h-5" />
               </Link>
               <Link 
-                href="https://x.com" 
+                href="https://x.com/RequireTechNg" 
                 target="_blank" 
                 className="bg-white/10 hover:bg-accent/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
               >
                 <Twitter className="w-5 h-5" />
               </Link>
-              <Link 
-                href="https://wa.me/2341234567890" 
-                target="_blank" 
-                className="bg-white/10 hover:bg-accent/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
-              >
-                <MessageCircle className="w-5 h-5" />
-              </Link>
+                <Link 
+                  href="https://wa.me/2347063716221" 
+                  target="_blank" 
+                  className="bg-white/10 hover:bg-accent/20 p-3 rounded-lg transition-all duration-300 hover:scale-110"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                </Link>
             </div>
           </div>
           
@@ -91,10 +98,10 @@ export default function Footer() {
                     <Mail className="w-5 h-5 text-accent" />
                     <span>info@requiretechnologies.com</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-accent" />
-                    <span>07039883247</span>
-                  </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-accent" />
+                  <span>07063716221</span>
+                </div>
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                     <span>Lagos, Nigeria</span>

@@ -64,10 +64,10 @@ export default function Contact() {
               <p className="text-white/90">info@requiretechnologies.com</p>
             </div>
             
-            <div className="text-center">
-              <h3 className="text-xl font-bold mb-4 text-white">Phone</h3>
-              <p className="text-white/90">07039883247</p>
-            </div>
+              <div className="text-center">
+                <h3 className="text-xl font-bold mb-4 text-white">Phone</h3>
+                <p className="text-white/90">07063716221</p>
+              </div>
             
             <div className="text-center">
               <h3 className="text-xl font-bold mb-4 text-white">Website</h3>

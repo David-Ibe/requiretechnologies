@@ -137,9 +137,9 @@ export default function Services() {
                 <a href="mailto:info@requiretechnologies.com" className="text-accent hover:text-white transition-colors">
                   📧 info@requiretechnologies.com
                 </a>
-                <a href="tel:07039883247" className="text-accent hover:text-white transition-colors">
-                  📞 07039883247
-                </a>
+                  <a href="tel:07063716221" className="text-accent hover:text-white transition-colors">
+                    📞 07063716221
+                  </a>
               </div>
             </div>
           </div>

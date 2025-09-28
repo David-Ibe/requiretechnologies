@@ -156,10 +156,10 @@ export default function About() {
                 <h3 className="text-xl font-bold mb-4 text-white">Email</h3>
                 <p className="text-white/90">info@requiretechnologies.com</p>
               </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-white">Phone</h3>
-                <p className="text-white/90">07039883247</p>
-              </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-4 text-white">Phone</h3>
+                  <p className="text-white/90">07063716221</p>
+                </div>
             </div>
           </div>
         </div>
