@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+// import WhatsAppButton from '@/components/WhatsAppButton'
 
 export default function BlogPost() {
   return (
@@ -222,7 +222,7 @@ export default function BlogPost() {
         </div>
       </section>
 
-      <WhatsAppButton />
+      {/* WhatsApp button is now added globally in RootLayout */}
       <Footer />
     </div>
   )

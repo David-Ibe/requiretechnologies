@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+// import WhatsAppButton from '@/components/WhatsAppButton'
 import PortfolioGallery from '@/components/PortfolioGallery'
 
 export default function Portfolio() {
@@ -8,7 +8,7 @@ export default function Portfolio() {
     <div className="min-h-screen">
       <Header />
       <PortfolioGallery />
-      <WhatsAppButton />
+      {/* WhatsApp button is now added globally in RootLayout */}
       <Footer />
     </div>
   )
