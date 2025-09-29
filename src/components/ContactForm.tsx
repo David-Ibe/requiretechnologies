@@ -9,10 +9,20 @@ export default function ContactForm() {
     message: '' 
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! We will contact you soon.')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (!res.ok) throw new Error('Failed')
+      alert('Your message has been sent. We will contact you shortly.')
+      setFormData({ name: '', email: '', message: '' })
+    } catch (err) {
+      alert('Sorry, something went wrong. Please try again later.')
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

@@ -70,6 +70,17 @@ Update the phone number in `src/components/WhatsAppButton.tsx`:
 const phoneNumber = "2341234567890" // Your actual WhatsApp number
 ```
 
+### Contact Form Email (SMTP)
+- Set these env vars in Vercel Project → Settings → Environment Variables:
+  - `SMTP_HOST` (e.g., smtp.gmail.com or your provider)
+  - `SMTP_PORT` (465 for SSL or 587 for STARTTLS)
+  - `SMTP_USER` (SMTP mailbox username)
+  - `SMTP_PASS` (SMTP mailbox password or app password)
+- The API sends inbound messages to:
+  - info@requiretechnologies.com
+  - cxxx2500@gmail.com
+- An auto-reply is sent to the sender’s email with branded header.
+
 ### Contact Information
 Update contact details in:
 - `src/components/Footer.tsx`
