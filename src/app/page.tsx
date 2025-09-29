@@ -9,12 +9,40 @@ import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
 import AnimatedTechCarousel from '@/components/AnimatedTechCarousel'
 import { CheckCircle, Users, Award } from 'lucide-react'
+import Script from 'next/script'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
+      <Script
+        id="ld-json-org"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Require Technologies Limited',
+            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com',
+            logo: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/logo.png',
+            sameAs: [
+              'https://www.linkedin.com/company/require-technologies-limited',
+              'https://x.com/RequireTechNg',
+              'https://www.facebook.com/RequireTechnologiesLimited',
+            ],
+            contactPoint: [{
+              '@type': 'ContactPoint',
+              contactType: 'customer service',
+              email: 'info@requiretechnologies.com',
+              telephone: '+2347063716221',
+              areaServed: 'NG',
+              availableLanguage: ['en']
+            }]
+          })
+        }}
+      />
       
       {/* Services Section */}
       <section 
