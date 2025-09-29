@@ -61,7 +61,7 @@ export default function BlogPost() {
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
-          <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl font-bold text-white mb-6">The Cybersecurity Landscape in Nigeria</h2>
