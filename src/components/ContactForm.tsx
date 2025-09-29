@@ -51,13 +51,13 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="max-w-md mx-auto">
       <div className="card-minimal">
         {notice.type && (
           <div
             role="status"
             aria-live="polite"
-            className={`mb-4 rounded-lg px-4 py-3 text-sm ${
+            className={`mb-3 rounded-lg px-3 py-2 text-sm ${
               notice.type === 'success'
                 ? 'bg-green-600 text-white border border-green-500 shadow-md'
                 : 'bg-red-600 text-white border border-red-500 shadow-md'
@@ -66,14 +66,14 @@ export default function ContactForm() {
             {notice.message}
           </div>
         )}
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-primary font-semibold mb-2">Name</label>
+            <label htmlFor="name" className="block text-primary font-semibold mb-1 text-sm">Name</label>
             <input
               type="text"
               id="name"
               name="name"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-sm text-gray-900 bg-white"
               value={formData.name}
               onChange={handleChange}
               required
@@ -81,12 +81,12 @@ export default function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="email" className="block text-primary font-semibold mb-2">Email</label>
+            <label htmlFor="email" className="block text-primary font-semibold mb-1 text-sm">Email</label>
             <input
               type="email"
               id="email"
               name="email"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300"
+              className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 text-sm text-gray-900 bg-white"
               value={formData.email}
               onChange={handleChange}
               required
@@ -94,12 +94,12 @@ export default function ContactForm() {
           </div>
           
           <div>
-            <label htmlFor="message" className="block text-primary font-semibold mb-2">Message</label>
+            <label htmlFor="message" className="block text-primary font-semibold mb-1 text-sm">Message</label>
             <textarea
               id="message"
               name="message"
-              rows={4}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all duration-300"
+              rows={3}
+              className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent resize-none transition-all duration-300 text-sm text-gray-900 bg-white"
               value={formData.message}
               onChange={handleChange}
               required
@@ -108,7 +108,7 @@ export default function ContactForm() {
           
           <button 
             type="submit" 
-            className={`btn-primary w-full ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
+            className={`btn-primary w-full py-2 text-sm ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
             disabled={isDisabled}
           >
             {submitting ? 'Sending…' : 'Send Message'}

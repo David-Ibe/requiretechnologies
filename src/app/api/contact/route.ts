@@ -16,7 +16,8 @@ export async function POST(req: NextRequest) {
     const toSecondary = 'cxxx2500@gmail.com'
 
     if (!resendApiKey) {
-      return NextResponse.json({ error: 'Email is not configured' }, { status: 500 })
+      console.error('RESEND_API_KEY not found in environment variables')
+      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 })
     }
 
     const resend = new Resend(resendApiKey)
@@ -72,8 +73,11 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ ok: true })
   } catch (err) {
-    console.error('Contact API error', err)
-    return NextResponse.json({ error: 'Failed to send' }, { status: 500 })
+    console.error('Contact API error:', err)
+    return NextResponse.json({ 
+      error: 'Failed to send email', 
+      details: process.env.NODE_ENV === 'development' ? err.message : undefined 
+    }, { status: 500 })
   }
 }
 
