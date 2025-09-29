@@ -1,3 +1,4 @@
+import Image from 'next/image'
 'use client'
 
 import { motion } from 'framer-motion'
@@ -157,11 +158,13 @@ export default function TestimonialsSection() {
 
                 {/* Client Info */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg">
-                    <img 
+                  <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg relative">
+                    <Image 
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      sizes="48px"
+                      className="object-cover"
                     />
                   </div>
                   <div>

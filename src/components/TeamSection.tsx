@@ -1,3 +1,4 @@
+import Image from 'next/image'
 interface TeamMember {
   name: string
   role: string
@@ -32,10 +33,12 @@ export default function TeamSection() {
             {teamMembers.map((member, index) => (
               <div key={index} className="text-center">
                 <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full mx-auto mb-4 overflow-hidden shadow-lg border-2 border-white/20 relative">
-                  <img 
+                  <Image 
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="128px"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-2xl opacity-0 hover:opacity-100 transition-opacity">
                     {member.name.split(' ').map(n => n[0]).join('')}

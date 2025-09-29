@@ -1,3 +1,4 @@
+import Image from 'next/image'
 interface Project {
   id: number
   title: string
@@ -31,11 +32,13 @@ export default function PortfolioGallery() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div key={project.id} className="card-dark hover:border-accent/50 transition-colors">
-              <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                <img 
+              <div className="w-full h-32 rounded-lg mb-4 overflow-hidden relative">
+                <Image 
                   src={`/images/portfolio/${project.title.toLowerCase().replace(/\s+/g, '-')}.jpg`}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover"
                 />
               </div>
               <h3 className="font-bold text-white mb-2">{project.title}</h3>
