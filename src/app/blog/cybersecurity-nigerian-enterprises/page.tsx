@@ -1,6 +1,18 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 // import WhatsAppButton from '@/components/WhatsAppButton'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Cybersecurity for Nigerian Enterprises | Require Technologies',
+  description: 'Essential strategies, regulations, and solutions to protect digital assets in Nigeria’s evolving threat landscape.',
+  openGraph: {
+    title: 'Cybersecurity for Nigerian Enterprises | Require Technologies',
+    description: 'Essential strategies, regulations, and solutions to protect digital assets in Nigeria’s evolving threat landscape.',
+    images: ['/images/backgrounds/hero-main.jpg']
+  }
+}
 
 export default function BlogPost() {
   return (
@@ -8,18 +20,19 @@ export default function BlogPost() {
       <Header />
       
       {/* Hero Section */}
-      <section 
-        className="py-20 text-white relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/backgrounds/hero-main.jpg"
+            alt="Cybersecurity hero background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Cybersecurity for Nigerian Enterprises: Protecting Digital Assets in the Digital Age

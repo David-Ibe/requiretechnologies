@@ -1,6 +1,18 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 // import WhatsAppButton from '@/components/WhatsAppButton'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'AI Solutions for the Banking Sector in Nigeria | Require Technologies',
+  description: 'How Conversational AI transforms customer service in Nigerian banks with secure, scalable automation and real-time human handoff.',
+  openGraph: {
+    title: 'AI Solutions for the Banking Sector in Nigeria | Require Technologies',
+    description: 'How Conversational AI transforms customer service in Nigerian banks with secure, scalable automation and real-time human handoff.',
+    images: ['/images/blog/ai-solutions-banking-hero.png']
+  }
+}
 
 export default function BlogPost() {
   return (
@@ -8,18 +20,19 @@ export default function BlogPost() {
       <Header />
       
       {/* Hero Section */}
-      <section 
-        className="py-20 text-white relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="py-20 text-white relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/backgrounds/hero-main.jpg"
+            alt="Banking AI solutions hero background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               AI Solutions for the Banking Sector: Transforming Customer Service in Nigeria
