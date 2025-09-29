@@ -7,6 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Digital Transformation in West Africa | Require Technologies',
   description: 'Opportunities, challenges, and best practices for enterprises leading the digital revolution across West Africa.',
+  alternates: { canonical: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/digital-transformation-west-africa' },
   openGraph: {
     title: 'Digital Transformation in West Africa | Require Technologies',
     description: 'Opportunities, challenges, and best practices for enterprises leading the digital revolution across West Africa.',
@@ -46,6 +47,25 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
+
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Digital Transformation in West Africa: Opportunities and Challenges',
+            author: { '@type': 'Person', name: 'Chimaobi David Ibe', url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/author/chimaobi-david-ibe' },
+            datePublished: '2025-01-10',
+            image: [(process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/images/backgrounds/hero-main.jpg'],
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/digital-transformation-west-africa'
+            }
+          })
+        }}
+      />
 
       {/* Article Content */}
       <section 

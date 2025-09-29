@@ -7,6 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'AI Solutions for the Banking Sector in Nigeria | Require Technologies',
   description: 'How Conversational AI transforms customer service in Nigerian banks with secure, scalable automation and real-time human handoff.',
+  alternates: { canonical: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/ai-solutions-banking-sector' },
   openGraph: {
     title: 'AI Solutions for the Banking Sector in Nigeria | Require Technologies',
     description: 'How Conversational AI transforms customer service in Nigerian banks with secure, scalable automation and real-time human handoff.',
@@ -46,6 +47,25 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
+
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'AI Solutions for the Banking Sector: Transforming Customer Service in Nigeria',
+            author: { '@type': 'Person', name: 'Chimaobi David Ibe', url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/author/chimaobi-david-ibe' },
+            datePublished: '2025-01-15',
+            image: [(process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/images/blog/ai-solutions-banking-hero.png'],
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/ai-solutions-banking-sector'
+            }
+          })
+        }}
+      />
 
       {/* Featured Image removed by request */}
 

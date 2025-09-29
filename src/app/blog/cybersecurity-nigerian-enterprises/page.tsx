@@ -7,6 +7,7 @@ import Image from 'next/image'
 export const metadata: Metadata = {
   title: 'Cybersecurity for Nigerian Enterprises | Require Technologies',
   description: 'Essential strategies, regulations, and solutions to protect digital assets in Nigeria’s evolving threat landscape.',
+  alternates: { canonical: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/cybersecurity-nigerian-enterprises' },
   openGraph: {
     title: 'Cybersecurity for Nigerian Enterprises | Require Technologies',
     description: 'Essential strategies, regulations, and solutions to protect digital assets in Nigeria’s evolving threat landscape.',
@@ -46,6 +47,25 @@ export default function BlogPost() {
           </div>
         </div>
       </section>
+
+      {/* Article JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: 'Cybersecurity for Nigerian Enterprises: Protecting Digital Assets',
+            author: { '@type': 'Person', name: 'Chimaobi David Ibe', url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/author/chimaobi-david-ibe' },
+            datePublished: '2025-01-05',
+            image: [(process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/images/backgrounds/hero-main.jpg'],
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/cybersecurity-nigerian-enterprises'
+            }
+          })
+        }}
+      />
 
         {/* Featured Image removed by request */}
 
