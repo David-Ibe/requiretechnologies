@@ -70,12 +70,12 @@ Update the phone number in `src/components/WhatsAppButton.tsx`:
 const phoneNumber = "2341234567890" // Your actual WhatsApp number
 ```
 
-### Contact Form Email (SMTP)
-- Set these env vars in Vercel Project → Settings → Environment Variables:
-  - `SMTP_HOST` (e.g., smtp.gmail.com or your provider)
-  - `SMTP_PORT` (465 for SSL or 587 for STARTTLS)
-  - `SMTP_USER` (SMTP mailbox username)
-  - `SMTP_PASS` (SMTP mailbox password or app password)
+### Contact Form Email (Resend)
+- Create a Resend account and verify your domain (add SPF/DKIM as instructed)
+- Set env vars in Vercel → Environment Variables:
+  - `RESEND_API_KEY` (from Resend dashboard)
+  - `RESEND_DOMAIN` = requiretechnologies.com (optional; defaults to this)
+  - `NEXT_PUBLIC_SITE_URL` = https://requiretechnologies.com
 - The API sends inbound messages to:
   - info@requiretechnologies.com
   - cxxx2500@gmail.com

@@ -8,9 +8,28 @@ export default function ContactForm() {
     email: '', 
     message: '' 
   })
+  const [submitting, setSubmitting] = useState(false)
+  const [notice, setNotice] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' })
+
+  const isValidEmail = (value: string) => /[^\s@]+@[^\s@]+\.[^\s@]+/.test(value)
+  const isDisabled =
+    submitting ||
+    !formData.name.trim() ||
+    !isValidEmail(formData.email) ||
+    formData.message.trim().length < 5
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setNotice({ type: null, message: '' })
+    if (!isValidEmail(formData.email)) {
+      setNotice({ type: 'error', message: 'Please enter a valid email address.' })
+      return
+    }
+    if (formData.message.trim().length < 5) {
+      setNotice({ type: 'error', message: 'Please provide a bit more detail in your message.' })
+      return
+    }
+    setSubmitting(true)
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -18,10 +37,12 @@ export default function ContactForm() {
         body: JSON.stringify(formData),
       })
       if (!res.ok) throw new Error('Failed')
-      alert('Your message has been sent. We will contact you shortly.')
+      setNotice({ type: 'success', message: 'Your message has been sent. We will contact you shortly.' })
       setFormData({ name: '', email: '', message: '' })
     } catch (err) {
-      alert('Sorry, something went wrong. Please try again later.')
+      setNotice({ type: 'error', message: 'Sorry, something went wrong. Please try again later.' })
+    } finally {
+      setSubmitting(false)
     }
   }
 
@@ -32,6 +53,17 @@ export default function ContactForm() {
   return (
     <div className="max-w-lg mx-auto">
       <div className="card-minimal">
+        {notice.type && (
+          <div
+            role="status"
+            aria-live="polite"
+            className={`mb-4 rounded-lg px-4 py-3 text-sm ${
+              notice.type === 'success' ? 'bg-green-500/15 text-green-300 border border-green-500/30' : 'bg-red-500/15 text-red-300 border border-red-500/30'
+            }`}
+          >
+            {notice.message}
+          </div>
+        )}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-primary font-semibold mb-2">Name</label>
@@ -74,9 +106,10 @@ export default function ContactForm() {
           
           <button 
             type="submit" 
-            className="btn-primary w-full"
+            className={`btn-primary w-full ${isDisabled ? 'opacity-60 cursor-not-allowed' : ''}`}
+            disabled={isDisabled}
           >
-            Send Message
+            {submitting ? 'Sending…' : 'Send Message'}
           </button>
         </form>
       </div>

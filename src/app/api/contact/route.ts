@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from '@resend/node'
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,23 +9,17 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
     }
 
-    const smtpHost = process.env.SMTP_HOST
-    const smtpPort = Number(process.env.SMTP_PORT || 587)
-    const smtpUser = process.env.SMTP_USER
-    const smtpPass = process.env.SMTP_PASS
+    const resendApiKey = process.env.RESEND_API_KEY
+    const sendingDomain = process.env.RESEND_DOMAIN || 'requiretechnologies.com'
+    const fromAddress = `Require Technologies <noreply@${sendingDomain}>`
     const toPrimary = 'info@requiretechnologies.com'
     const toSecondary = 'cxxx2500@gmail.com'
 
-    if (!smtpHost || !smtpUser || !smtpPass) {
+    if (!resendApiKey) {
       return NextResponse.json({ error: 'Email is not configured' }, { status: 500 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: { user: smtpUser, pass: smtpPass },
-    })
+    const resend = new Resend(resendApiKey)
 
     const subject = `New contact form submission from ${name}`
 
@@ -45,10 +39,10 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
-    await transporter.sendMail({
-      from: `Require Technologies <${smtpUser}>`,
+    await resend.emails.send({
+      from: fromAddress,
       to: [toPrimary, toSecondary],
-      replyTo: email,
+      reply_to: email,
       subject,
       html: htmlBody,
     })
@@ -69,8 +63,8 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
-    await transporter.sendMail({
-      from: `Require Technologies <${smtpUser}>`,
+    await resend.emails.send({
+      from: fromAddress,
       to: email,
       subject: 'We received your message',
       html: autoReplyHtml,
