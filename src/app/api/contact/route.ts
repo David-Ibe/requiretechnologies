@@ -10,10 +10,8 @@ export async function POST(req: NextRequest) {
     }
 
     const resendApiKey = process.env.RESEND_API_KEY
-    // Use Resend's default domain for testing, or your verified domain
     const fromAddress = 'Require Technologies <onboarding@resend.dev>'
-    const toPrimary = 'info@requiretechnologies.com'
-    const toSecondary = 'cxxx2500@gmail.com'
+    const toEmail = 'cxxx2500@gmail.com'
 
     if (!resendApiKey) {
       console.error('RESEND_API_KEY not found in environment variables')
@@ -40,15 +38,19 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
+    console.log('Sending email to:', toEmail)
+    console.log('From:', fromAddress)
+    console.log('Subject:', subject)
+    
     const result1 = await resend.emails.send({
       from: fromAddress,
-      to: [toPrimary, toSecondary],
+      to: toEmail,
       reply_to: email,
       subject,
       html: htmlBody,
     })
     
-    console.log('Primary email sent:', result1)
+    console.log('Contact email result:', JSON.stringify(result1, null, 2))
 
     const autoReplyHtml = `
       <table width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; background:#0b0b0b; padding:24px; color:#ffffff;">
@@ -66,6 +68,8 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
+    console.log('Sending auto-reply to:', email)
+    
     const result2 = await resend.emails.send({
       from: fromAddress,
       to: email,
@@ -73,7 +77,7 @@ export async function POST(req: NextRequest) {
       html: autoReplyHtml,
     })
     
-    console.log('Auto-reply sent:', result2)
+    console.log('Auto-reply result:', JSON.stringify(result2, null, 2))
 
     return NextResponse.json({ ok: true })
   } catch (err: unknown) {
