@@ -34,32 +34,11 @@ export default function BlogPost() {
         </div>
       </section>
 
-        {/* Featured Image */}
-        <section 
-          className="py-12 relative"
-          style={{
-            backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-          }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <img 
-                src="/images/blog/ai-solutions-banking-hero.jpg" 
-                alt="AI Solutions for Banking Sector"
-                className="w-full h-96 object-cover rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
+      {/* Featured Image removed by request */}
 
-        {/* Article Content */}
-        <section 
-          className="py-20 relative"
+      {/* Article Content */}
+      <section 
+        className="pt-10 pb-16 relative -mt-6"
           style={{
             backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
             backgroundSize: 'cover',
@@ -229,10 +208,10 @@ export default function BlogPost() {
                 </ol>
               </div>
 
-              <div className="bg-accent text-white p-8 rounded-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Banking Operations?</h3>
-                <p className="text-lg mb-6">
-                  Contact Require Technologies to discuss how our AI solutions can revolutionize your customer service.
+              <div className="card-dark text-center">
+                <h3 className="text-2xl font-bold mb-4 text-white">Ready to Transform Your Business?</h3>
+                <p className="text-lg mb-6 text-white/90">
+                  Contact Require Technologies to architect secure, scalable, and intelligent digital platforms tailored to your goals—across AI, software, cloud, and data.
                 </p>
                 <a href="/contact" className="btn-glossy font-semibold">
                   Get Started Today

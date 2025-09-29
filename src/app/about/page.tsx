@@ -1,12 +1,60 @@
+import type { Metadata } from 'next'
+import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 // import SophisticatedChatbot from '@/components/SophisticatedChatbot'
-import TeamSection from '@/components/TeamSection'
+// import TeamSection from '@/components/TeamSection'
+
+export const metadata: Metadata = {
+  title: 'About Require Technologies | Chimaobi David Ibe (Founder & CEO)',
+  description:
+    'Learn about Require Technologies and its Founder & CEO, Chimaobi David Ibe. We build secure, scalable, intelligent platforms for enterprises across West Africa.',
+  keywords: [
+    'Chimaobi David Ibe',
+    'Require Technologies',
+    'Founder',
+    'CEO',
+    'About Require Technologies',
+    'Enterprise Software Nigeria',
+    'AI Solutions Nigeria',
+  ],
+  openGraph: {
+    title: 'About Require Technologies | Chimaobi David Ibe',
+    description:
+      'Require Technologies is led by Founder & CEO, Chimaobi David Ibe. We deliver Fortune 500-grade platforms across AI, Software, Cloud, and Data.',
+    type: 'profile',
+    locale: 'en_NG',
+  },
+}
 
 export default function About() {
   return (
     <div className="min-h-screen">
       <Header />
+      <Script
+        id="ld-json-founder"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Chimaobi David Ibe',
+            jobTitle: 'Founder & CEO',
+            worksFor: {
+              '@type': 'Organization',
+              name: 'Require Technologies',
+              url: process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com',
+            },
+            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/about',
+            sameAs: [
+              'https://www.linkedin.com/company/require-technologies-limited',
+              'https://x.com/RequireTechNg',
+              'https://www.facebook.com/RequireTechnologiesLimited',
+            ],
+          }),
+        }}
+      />
       
 
       {/* Company Overview */}
@@ -100,7 +148,7 @@ export default function About() {
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary mb-8 text-center">Our Mission & Value</h2>
+            <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Mission & Value</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="card-dark">
@@ -165,7 +213,44 @@ export default function About() {
         </div>
       </section>
 
-      <TeamSection />
+      {/* Founder Message (Fortune 500 Standard) */}
+      <section 
+        className="py-20 relative"
+        style={{
+          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-8">Message from Our Founder</h2>
+            <div className="card-dark">
+              <p className="text-white/90 leading-relaxed mb-6">
+                At Require Technologies, our mission is simple: build secure, scalable, and intelligent platforms that unlock measurable business outcomes. We partner with leaders who demand reliability at scale, disciplined execution, and technology that earns customer trust every day.
+              </p>
+              <p className="text-white/90 leading-relaxed mb-6">
+                We operate with Fortune 500 standards: customer obsession, operational excellence, and uncompromising governance. Our teams ship with clarity and speed, while ensuring resilience, compliance, and enterprise-grade security—especially for regulated industries like banking and financial services across West Africa.
+              </p>
+              <p className="text-white/90 leading-relaxed mb-6">
+                As AI reshapes every value chain, we help organizations move from pilots to production—responsibly, transparently, and at scale. The result is not just technology that works, but systems that win: better experiences, lower risk, and durable growth.
+              </p>
+              <div className="mt-8 flex items-center gap-4 justify-center">
+                <div className="w-12 h-12 rounded-full overflow-hidden border border-white/20">
+                  <img src="/images/team/chimaobi-david-ibe.JPG" alt="Chimaobi David Ibe" className="w-full h-full object-cover" />
+                </div>
+                <div className="text-left">
+                  <p className="text-white font-semibold">Chimaobi David Ibe</p>
+                  <p className="text-white/80 text-sm">Founder & CEO, Require Technologies</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
         {/* <SophisticatedChatbot /> */}
         <Footer />

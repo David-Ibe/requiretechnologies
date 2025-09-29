@@ -36,7 +36,7 @@ export default function BlogPost() {
 
       {/* Article Content */}
       <section 
-        className="py-20 relative"
+        className="pt-10 pb-16 relative -mt-6"
         style={{
           backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
           backgroundSize: 'cover',
@@ -49,36 +49,36 @@ export default function BlogPost() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold text-primary mb-6">The Digital Revolution in West Africa</h2>
+              <h2 className="text-3xl font-bold text-white mb-6">The Digital Revolution in West Africa</h2>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 West Africa is experiencing a digital transformation renaissance. With a combined population of over 400 million people and rapidly growing economies, the region presents unprecedented opportunities for enterprises to leverage technology for competitive advantage.
               </p>
 
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 From Nigeria's thriving fintech ecosystem to Ghana's emerging tech startups, West African businesses are increasingly recognizing the strategic importance of digital transformation in driving growth, efficiency, and innovation.
               </p>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">The Current Digital Landscape</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">The Current Digital Landscape</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 West Africa's digital landscape is characterized by rapid mobile adoption, growing internet penetration, and an increasingly tech-savvy population. However, many enterprises still rely on legacy systems and traditional business models that limit their ability to compete in the digital economy.
               </p>
 
-              <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                <h4 className="text-xl font-bold text-primary mb-4">Key Digital Indicators in West Africa:</h4>
+              <div className="card-dark mb-8">
+                <h4 className="text-xl font-bold text-white mb-4">Key Digital Indicators in West Africa:</h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <h5 className="font-bold text-primary mb-2">Mobile Penetration:</h5>
-                    <ul className="text-neutral space-y-1">
+                    <h5 className="font-bold text-white mb-2">Mobile Penetration:</h5>
+                    <ul className="text-white/90 space-y-1">
                       <li>• Nigeria: 85% mobile penetration</li>
                       <li>• Ghana: 78% mobile penetration</li>
                       <li>• Senegal: 72% mobile penetration</li>
                     </ul>
                   </div>
                   <div>
-                    <h5 className="font-bold text-primary mb-2">Internet Usage:</h5>
-                    <ul className="text-neutral space-y-1">
+                    <h5 className="font-bold text-white mb-2">Internet Usage:</h5>
+                    <ul className="text-white/90 space-y-1">
                       <li>• Nigeria: 51% internet penetration</li>
                       <li>• Ghana: 45% internet penetration</li>
                       <li>• Côte d'Ivoire: 38% internet penetration</li>
@@ -87,62 +87,62 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">Digital Transformation Challenges</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Digital Transformation Challenges</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 While the opportunities are vast, West African enterprises face unique challenges in their digital transformation journey:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
-                  <h5 className="text-lg font-bold text-primary mb-3">Infrastructure Limitations</h5>
-                  <p className="text-neutral">
+                <div className="card-dark">
+                  <h5 className="text-lg font-bold text-white mb-3">Infrastructure Limitations</h5>
+                  <p className="text-white/90">
                     Unreliable power supply, limited broadband access, and inadequate data centers create significant barriers to digital adoption.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
-                  <h5 className="text-lg font-bold text-primary mb-3">Skills Gap</h5>
-                  <p className="text-neutral">
+                <div className="card-dark">
+                  <h5 className="text-lg font-bold text-white mb-3">Skills Gap</h5>
+                  <p className="text-white/90">
                     Shortage of skilled IT professionals and digital literacy challenges among existing workforce.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
-                  <h5 className="text-lg font-bold text-primary mb-3">Regulatory Environment</h5>
-                  <p className="text-neutral">
+                <div className="card-dark">
+                  <h5 className="text-lg font-bold text-white mb-3">Regulatory Environment</h5>
+                  <p className="text-white/90">
                     Complex and evolving regulatory frameworks across different countries create compliance challenges.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
-                  <h5 className="text-lg font-bold text-primary mb-3">Cost Considerations</h5>
-                  <p className="text-neutral">
+                <div className="card-dark">
+                  <h5 className="text-lg font-bold text-white mb-3">Cost Considerations</h5>
+                  <p className="text-white/90">
                     High costs of technology solutions and limited access to financing for digital initiatives.
                   </p>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">Success Stories: Digital Transformation in Action</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Success Stories: Digital Transformation in Action</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 Despite these challenges, several West African enterprises have successfully implemented digital transformation initiatives:
               </p>
 
-              <div className="bg-accent/10 p-6 rounded-lg mb-8">
-                <h4 className="text-xl font-bold text-primary mb-4">Case Study: Nigerian Manufacturing Company</h4>
-                <p className="text-neutral mb-4">
+              <div className="card-dark mb-8">
+                <h4 className="text-xl font-bold text-white mb-4">Case Study: Nigerian Manufacturing Company</h4>
+                <p className="text-white/90 mb-4">
                   A leading manufacturing company in Lagos implemented a comprehensive digital transformation strategy that included:
                 </p>
-                <ul className="list-disc list-inside text-neutral space-y-2">
+                <ul className="list-disc list-inside text-white/90 space-y-2">
                   <li>IoT sensors for real-time equipment monitoring</li>
                   <li>Cloud-based ERP system for inventory management</li>
                   <li>AI-powered predictive maintenance</li>
                   <li>Mobile app for field sales team</li>
                 </ul>
-                <div className="mt-4 p-4 bg-white rounded-lg">
-                  <h5 className="font-bold text-primary mb-2">Results Achieved:</h5>
-                  <ul className="text-neutral space-y-1">
+                <div className="mt-4 p-4 card-dark">
+                  <h5 className="font-bold text-white mb-2">Results Achieved:</h5>
+                  <ul className="text-white/90 space-y-1">
                     <li>• 40% reduction in equipment downtime</li>
                     <li>• 25% improvement in inventory accuracy</li>
                     <li>• 30% increase in sales team productivity</li>
@@ -151,55 +151,55 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">Key Digital Transformation Pillars</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Key Digital Transformation Pillars</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 Successful digital transformation in West Africa requires a strategic approach across four key pillars:
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
+                <div className="card-dark">
                   <h5 className="text-lg font-bold text-primary mb-3">💡 Artificial Intelligence & Automation</h5>
-                  <p className="text-neutral">
+                  <p className="text-white/90">
                     Implementing AI solutions for customer service, process automation, and data-driven decision making.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
+                <div className="card-dark">
                   <h5 className="text-lg font-bold text-primary mb-3">💻 Digital Platforms & Applications</h5>
-                  <p className="text-neutral">
+                  <p className="text-white/90">
                     Developing custom software solutions and mobile applications tailored to local business needs.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
+                <div className="card-dark">
                   <h5 className="text-lg font-bold text-primary mb-3">🔒 Cybersecurity & Cloud Infrastructure</h5>
-                  <p className="text-neutral">
+                  <p className="text-white/90">
                     Securing digital assets and implementing cloud solutions for scalability and reliability.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 border border-gray-200 rounded-lg">
+                <div className="card-dark">
                   <h5 className="text-lg font-bold text-primary mb-3">📊 Data Analytics & Business Intelligence</h5>
-                  <p className="text-neutral">
+                  <p className="text-white/90">
                     Leveraging data for strategic insights and operational optimization.
                   </p>
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">Industry-Specific Opportunities</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Industry-Specific Opportunities</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 Different industries in West Africa present unique digital transformation opportunities:
               </p>
 
               <div className="space-y-6 mb-8">
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold text-primary mb-3">Financial Services</h4>
-                  <p className="text-neutral mb-3">
+                <div className="card-dark">
+                  <h4 className="text-xl font-bold text-white mb-3">Financial Services</h4>
+                  <p className="text-white/90 mb-3">
                     The fintech revolution in West Africa is driving digital banking, mobile payments, and financial inclusion initiatives.
                   </p>
-                  <ul className="list-disc list-inside text-neutral space-y-1">
+                  <ul className="list-disc list-inside text-white/90 space-y-1">
                     <li>Digital banking platforms and mobile apps</li>
                     <li>AI-powered fraud detection and risk assessment</li>
                     <li>Blockchain solutions for cross-border payments</li>
@@ -207,12 +207,12 @@ export default function BlogPost() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold text-primary mb-3">Agriculture</h4>
-                  <p className="text-neutral mb-3">
+                <div className="card-dark">
+                  <h4 className="text-xl font-bold text-white mb-3">Agriculture</h4>
+                  <p className="text-white/90 mb-3">
                     AgTech solutions are transforming farming practices and supply chain management across the region.
                   </p>
-                  <ul className="list-disc list-inside text-neutral space-y-1">
+                  <ul className="list-disc list-inside text-white/90 space-y-1">
                     <li>IoT sensors for soil and weather monitoring</li>
                     <li>Mobile apps for market price information</li>
                     <li>Blockchain for supply chain traceability</li>
@@ -220,12 +220,12 @@ export default function BlogPost() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 p-6 rounded-lg">
-                  <h4 className="text-xl font-bold text-primary mb-3">Healthcare</h4>
-                  <p className="text-neutral mb-3">
+                <div className="card-dark">
+                  <h4 className="text-xl font-bold text-white mb-3">Healthcare</h4>
+                  <p className="text-white/90 mb-3">
                     Digital health solutions are improving healthcare access and delivery across West Africa.
                   </p>
-                  <ul className="list-disc list-inside text-neutral space-y-1">
+                  <ul className="list-disc list-inside text-white/90 space-y-1">
                     <li>Telemedicine platforms for remote consultations</li>
                     <li>Electronic health records systems</li>
                     <li>AI-powered diagnostic tools</li>
@@ -234,15 +234,15 @@ export default function BlogPost() {
                 </div>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">Best Practices for Digital Transformation</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Best Practices for Digital Transformation</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 Based on our experience working with West African enterprises, here are key best practices for successful digital transformation:
               </p>
 
-              <div className="bg-primary/10 p-6 rounded-lg mb-8">
-                <h4 className="text-xl font-bold text-primary mb-4">Strategic Implementation Framework:</h4>
-                <ol className="list-decimal list-inside text-neutral space-y-3">
+              <div className="card-dark mb-8">
+                <h4 className="text-xl font-bold text-white mb-4">Strategic Implementation Framework:</h4>
+                <ol className="list-decimal list-inside text-white/90 space-y-3">
                   <li><strong>Assessment & Planning:</strong> Conduct comprehensive digital readiness assessment and develop transformation roadmap</li>
                   <li><strong>Stakeholder Engagement:</strong> Ensure buy-in from leadership and employees at all levels</li>
                   <li><strong>Pilot Programs:</strong> Start with small-scale pilot projects to demonstrate value and build confidence</li>
@@ -253,13 +253,13 @@ export default function BlogPost() {
                 </ol>
               </div>
 
-              <h3 className="text-2xl font-bold text-primary mb-4">The Future of Digital Transformation in West Africa</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">The Future of Digital Transformation in West Africa</h3>
               
-              <p className="text-lg text-neutral leading-relaxed mb-6">
+              <p className="text-lg text-white/90 leading-relaxed mb-6">
                 The future of digital transformation in West Africa is bright, with several emerging trends:
               </p>
 
-              <ul className="list-disc list-inside text-neutral space-y-2 mb-8">
+              <ul className="list-disc list-inside text-white/90 space-y-2 mb-8">
                 <li>Increased adoption of cloud computing and edge computing solutions</li>
                 <li>Growing emphasis on cybersecurity and data protection</li>
                 <li>Integration of AI and machine learning across all business functions</li>
@@ -268,9 +268,9 @@ export default function BlogPost() {
                 <li>Focus on sustainable and environmentally conscious technology solutions</li>
               </ul>
 
-              <div className="bg-accent text-white p-8 rounded-lg text-center">
-                <h3 className="text-2xl font-bold mb-4">Ready to Start Your Digital Transformation Journey?</h3>
-                <p className="text-lg mb-6">
+              <div className="card-dark text-center">
+                <h3 className="text-2xl font-bold mb-4 text-white">Ready to Start Your Digital Transformation Journey?</h3>
+                <p className="text-lg mb-6 text-white/90">
                   Require Technologies specializes in helping West African enterprises navigate their digital transformation journey with strategic innovation and guaranteed compliance.
                 </p>
                 <a href="/contact" className="btn-glossy font-semibold">
