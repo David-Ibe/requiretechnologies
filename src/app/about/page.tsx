@@ -18,10 +18,17 @@ export const metadata: Metadata = {
     'Enterprise Software Nigeria',
     'AI Solutions Nigeria',
   ],
+  alternates: {
+    canonical: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/about',
+  },
   openGraph: {
     title: 'About Require Technologies | Chimaobi David Ibe',
     description:
       'Require Technologies is led by Founder & CEO, Chimaobi David Ibe. We deliver Fortune 500-grade platforms across AI, Software, Cloud, and Data.',
+    url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/about',
+    images: [
+      (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/images/team/chimaobi-david-ibe.JPG',
+    ],
     type: 'profile',
     locale: 'en_NG',
   },
