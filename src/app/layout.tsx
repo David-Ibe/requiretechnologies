@@ -6,6 +6,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.vercel.app'),
   title: 'Require Technologies Limited - Software Solutions in Nigeria',
   description: 'Transform your business with custom websites, mobile apps, and IT consulting in Nigeria. AI-driven solutions for modern businesses.',
   keywords: 'Nigeria software development, mobile app Lagos, IT consulting Nigeria, website development, AI solutions',
