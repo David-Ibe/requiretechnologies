@@ -58,7 +58,9 @@ export default function ContactForm() {
             role="status"
             aria-live="polite"
             className={`mb-4 rounded-lg px-4 py-3 text-sm ${
-              notice.type === 'success' ? 'bg-green-500/15 text-green-300 border border-green-500/30' : 'bg-red-500/15 text-red-300 border border-red-500/30'
+              notice.type === 'success'
+                ? 'bg-green-600 text-white border border-green-500 shadow-md'
+                : 'bg-red-600 text-white border border-red-500 shadow-md'
             }`}
           >
             {notice.message}
