@@ -72,11 +72,12 @@ export async function POST(req: NextRequest) {
     })
 
     return NextResponse.json({ ok: true })
-  } catch (err) {
-    console.error('Contact API error:', err)
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error('Contact API error:', message)
     return NextResponse.json({ 
       error: 'Failed to send email', 
-      details: process.env.NODE_ENV === 'development' ? err.message : undefined 
+      details: process.env.NODE_ENV === 'development' ? message : undefined 
     }, { status: 500 })
   }
 }
