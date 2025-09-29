@@ -206,28 +206,28 @@ export default function BlogPost() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div className="card-dark">
-                  <h5 className="text-lg font-bold text-primary mb-3">💡 Artificial Intelligence & Automation</h5>
+                  <h5 className="text-lg font-bold text-accent mb-3">💡 Artificial Intelligence & Automation</h5>
                   <p className="text-white/90">
                     Implementing AI solutions for customer service, process automation, and data-driven decision making.
                   </p>
                 </div>
                 
                 <div className="card-dark">
-                  <h5 className="text-lg font-bold text-primary mb-3">💻 Digital Platforms & Applications</h5>
+                  <h5 className="text-lg font-bold text-accent mb-3">💻 Digital Platforms & Applications</h5>
                   <p className="text-white/90">
                     Developing custom software solutions and mobile applications tailored to local business needs.
                   </p>
                 </div>
                 
                 <div className="card-dark">
-                  <h5 className="text-lg font-bold text-primary mb-3">🔒 Cybersecurity & Cloud Infrastructure</h5>
+                  <h5 className="text-lg font-bold text-accent mb-3">🔒 Cybersecurity & Cloud Infrastructure</h5>
                   <p className="text-white/90">
                     Securing digital assets and implementing cloud solutions for scalability and reliability.
                   </p>
                 </div>
                 
                 <div className="card-dark">
-                  <h5 className="text-lg font-bold text-primary mb-3">📊 Data Analytics & Business Intelligence</h5>
+                  <h5 className="text-lg font-bold text-accent mb-3">📊 Data Analytics & Business Intelligence</h5>
                   <p className="text-white/90">
                     Leveraging data for strategic insights and operational optimization.
                   </p>
