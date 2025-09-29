@@ -20,7 +20,7 @@
     "react-intersection-observer": "^9.16.0",
     "react-parallax-tilt": "^1.7.309",
     "react-typed": "^2.0.12",
-    "@resend/node": "^4.0.0"
+    "resend": "^3.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

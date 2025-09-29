@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from '@resend/node'
+import { Resend } from 'resend'
 
 export async function POST(req: NextRequest) {
   try {
