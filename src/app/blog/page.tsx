@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import SophisticatedChatbot from '@/components/SophisticatedChatbot'
+// import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import Link from 'next/link'
 
 export default function Blog() {
@@ -218,7 +218,7 @@ export default function Blog() {
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent"
                 />
-                <button className="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-all duration-300 hover:scale-105 font-semibold">
+                <button className="btn-glossy font-semibold">
                   Subscribe
                 </button>
               </div>
@@ -293,8 +293,8 @@ export default function Blog() {
         </div>
       </section>
 
-        <SophisticatedChatbot />
-      <Footer />
+        {/* <SophisticatedChatbot /> */}
+        <Footer />
     </div>
   )
 }

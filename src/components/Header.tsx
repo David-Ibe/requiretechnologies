@@ -33,7 +33,7 @@ export default function Header() {
               <Link href="/services" className="hover:text-accent transition-colors font-medium">Services</Link>
               <Link href="/blog" className="hover:text-accent transition-colors font-medium">Blog</Link>
               <Link href="/contact" className="hover:text-accent transition-colors font-medium">Contact</Link>
-              <Link href="/contact" className="btn-primary flex items-center gap-2 group">
+              <Link href="/contact" className="btn-glossy flex items-center gap-2 group">
                 Get a Quote
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -100,7 +100,7 @@ export default function Header() {
             </Link>
             <Link 
               href="/contact" 
-              className="btn-primary inline-flex items-center gap-2 mt-4"
+              className="btn-glossy inline-flex items-center gap-2 mt-4"
               onClick={() => setIsMenuOpen(false)}
             >
               Get a Quote

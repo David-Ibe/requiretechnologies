@@ -273,7 +273,7 @@ export default function BlogPost() {
                 <p className="text-lg mb-6">
                   Require Technologies specializes in helping West African enterprises navigate their digital transformation journey with strategic innovation and guaranteed compliance.
                 </p>
-                <a href="/contact" className="bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <a href="/contact" className="btn-glossy font-semibold">
                   Get Started Today
                 </a>
               </div>

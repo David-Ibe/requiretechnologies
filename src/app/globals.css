@@ -66,6 +66,13 @@ code, pre, .font-mono {
   @apply btn-minimal bg-transparent text-primary border-primary hover:bg-primary hover:text-white;
 }
 
+.btn-glossy {
+  @apply px-6 py-3 rounded-lg border-2 transition-all duration-300 font-medium;
+  @apply bg-white/10 backdrop-blur-sm border-white/30 text-white;
+  @apply hover:bg-white/20 hover:border-white/50 hover:scale-105;
+  @apply shadow-lg hover:shadow-xl;
+}
+
 /* Tech-inspired animations */
 @keyframes glow {
   0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.3); }

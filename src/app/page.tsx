@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import ServiceCard from '@/components/ServiceCard'
-import SophisticatedChatbot from '@/components/SophisticatedChatbot'
+// import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
 import AnimatedTechCarousel from '@/components/AnimatedTechCarousel'
@@ -106,8 +106,8 @@ export default function Home() {
         </div>
       </section>
 
-        <SophisticatedChatbot />
-      <Footer />
+        {/* <SophisticatedChatbot /> */}
+        <Footer />
     </div>
   )
 }

@@ -234,7 +234,7 @@ export default function BlogPost() {
                 <p className="text-lg mb-6">
                   Contact Require Technologies to discuss how our AI solutions can revolutionize your customer service.
                 </p>
-                <a href="/contact" className="bg-white text-accent px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <a href="/contact" className="btn-glossy font-semibold">
                   Get Started Today
                 </a>
               </div>

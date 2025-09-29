@@ -1,6 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import SophisticatedChatbot from '@/components/SophisticatedChatbot'
+// import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import TeamSection from '@/components/TeamSection'
 
 export default function About() {
@@ -167,8 +167,8 @@ export default function About() {
 
       <TeamSection />
 
-        <SophisticatedChatbot />
-      <Footer />
+        {/* <SophisticatedChatbot /> */}
+        <Footer />
     </div>
   )
 }
