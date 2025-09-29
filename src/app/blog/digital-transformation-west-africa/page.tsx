@@ -48,6 +48,21 @@ export default function BlogPost() {
         </div>
       </section>
 
+      {/* Breadcrumb JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Blog', item: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog' },
+              { '@type': 'ListItem', position: 2, name: 'Digital Transformation in West Africa', item: (process.env.NEXT_PUBLIC_SITE_URL || 'https://requiretechnologies.com') + '/blog/digital-transformation-west-africa' }
+            ]
+          })
+        }}
+      />
+
       {/* Article JSON-LD */}
       <script
         type="application/ld+json"
@@ -74,8 +89,7 @@ export default function BlogPost() {
           backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
