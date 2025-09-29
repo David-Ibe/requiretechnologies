@@ -10,8 +10,8 @@ export async function POST(req: NextRequest) {
     }
 
     const resendApiKey = process.env.RESEND_API_KEY
-    const sendingDomain = process.env.RESEND_DOMAIN || 'requiretechnologies.com'
-    const fromAddress = `Require Technologies <noreply@${sendingDomain}>`
+    // Use Resend's default domain for testing, or your verified domain
+    const fromAddress = 'Require Technologies <onboarding@resend.dev>'
     const toPrimary = 'info@requiretechnologies.com'
     const toSecondary = 'cxxx2500@gmail.com'
 
@@ -40,13 +40,15 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
-    await resend.emails.send({
+    const result1 = await resend.emails.send({
       from: fromAddress,
       to: [toPrimary, toSecondary],
       reply_to: email,
       subject,
       html: htmlBody,
     })
+    
+    console.log('Primary email sent:', result1)
 
     const autoReplyHtml = `
       <table width="100%" cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; background:#0b0b0b; padding:24px; color:#ffffff;">
@@ -64,12 +66,14 @@ export async function POST(req: NextRequest) {
       </table>
     `
 
-    await resend.emails.send({
+    const result2 = await resend.emails.send({
       from: fromAddress,
       to: email,
       subject: 'We received your message',
       html: autoReplyHtml,
     })
+    
+    console.log('Auto-reply sent:', result2)
 
     return NextResponse.json({ ok: true })
   } catch (err: unknown) {
