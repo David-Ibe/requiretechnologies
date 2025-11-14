@@ -49,6 +49,10 @@ export default function Services() {
               description="We provide end-to-end services for custom software development, including robust websites, mobile applications, and system integrations, ensuring optimal performance and user experience across all digital touchpoints."
             />
             <ServiceCard
+              title="🛒 Online Store Development"
+              description="Professional e-commerce solutions including Shopify store development, payment gateway integration (Paystack, Flutterwave), local shipping setup, and complete online store configuration tailored for Nigerian businesses. Transform your business into a thriving online marketplace."
+            />
+            <ServiceCard
               title="🔒 Cybersecurity & Cloud Services"
               description="We secure the digital foundation of your business. Our offerings include Cloud infrastructure setup, migration, and management, alongside advanced Cybersecurity solutions to protect sensitive data and ensure regulatory compliance."
             />

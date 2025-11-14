@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         primary: '#1e3a8a', // Dark blue - main brand color
+        'primary-dark': '#1e40af', // Darker blue variant
         accent: '#22c55e',  // Green - accent/highlight color
         neutral: '#374151', // Dark gray - text color for better contrast
       },
