@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   description: 'Transform your business with custom websites, mobile apps, and IT consulting in Nigeria. AI-driven solutions for modern businesses.',
   keywords: 'Nigeria software development, mobile app Lagos, IT consulting Nigeria, website development, AI solutions',
   authors: [{ name: 'Require Technologies Limited' }],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'Require Technologies Limited - Software Solutions in Nigeria',
     description: 'Transform your business with custom websites, mobile apps, and IT consulting in Nigeria.',
