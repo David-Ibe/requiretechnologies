@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ServiceCard from '@/components/ServiceCard'
+import AnimatedBackground from '@/components/AnimatedBackground'
 // import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 
 export default function Services() {
@@ -9,38 +10,28 @@ export default function Services() {
       <Header />
       
       {/* Hero Section */}
-      <section 
-        className="relative text-white min-h-screen flex items-center -mt-20 pt-20"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
+        className="relative text-white min-h-screen flex items-center justify-center pt-24 lg:pt-28"
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 text-center relative z-10 py-20">
+        <div className="container mx-auto px-4 text-center py-20">
           <h1 className="text-4xl font-bold mb-6">Our Services</h1>
           <p className="text-xl max-w-4xl mx-auto">
             We move beyond off-the-shelf products, architecting and deploying custom-built platforms tailored to specific business demands across West Africa.
           </p>
         </div>
-      </section>
+      </AnimatedBackground>
 
         {/* Main Services */}
-        <section 
+        <AnimatedBackground
+          imageUrl="/images/backgrounds/hero-main.jpg"
+          overlay={true}
+          overlayOpacity="60"
           className="py-20 relative"
-          style={{
-            backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-          }}
         >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Our Capabilities</h2>
             <p className="text-xl text-white/90 max-w-4xl mx-auto">
@@ -67,21 +58,16 @@ export default function Services() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Value Proposition */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-8">Our Value Proposition</h2>
             <div className="card-dark">
@@ -95,21 +81,16 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* CTA Section */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 text-white relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Get Started?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
@@ -144,7 +125,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
         {/* <SophisticatedChatbot /> */}
         <Footer />

@@ -1,20 +1,16 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import AnimatedBackground from './AnimatedBackground'
 
 export default function Hero() {
   return (
-      <section 
-        className="relative text-white min-h-screen flex items-center -mt-20 pt-20"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
+        className="relative text-white min-h-screen flex items-center justify-center pt-24 lg:pt-28"
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 text-center relative z-10 py-24 -mt-6 md:-mt-8">
+        <div className="container mx-auto px-4 text-center py-24 -mt-6 md:-mt-8">
           <motion.h1 
             className="text-5xl md:text-7xl font-bold mb-8 text-white"
             initial={{ opacity: 0, y: 50 }}
@@ -33,6 +29,6 @@ export default function Hero() {
             Get Started
           </Link>
         </div>
-    </section>
+      </AnimatedBackground>
   )
 }

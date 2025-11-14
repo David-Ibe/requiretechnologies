@@ -1,20 +1,16 @@
 import Link from 'next/link'
 import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter, MessageCircle, ArrowRight } from 'lucide-react'
+import AnimatedBackground from './AnimatedBackground'
 
 export default function Footer() {
   return (
-    <footer 
+    <AnimatedBackground
+      imageUrl="/images/backgrounds/hero-main.jpg"
+      overlay={true}
+      overlayOpacity="60"
       className="text-white py-16 relative"
-      style={{
-        backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundAttachment: 'fixed'
-      }}
     >
-      <div className="absolute inset-0 bg-black/60"></div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="md:col-span-2">
                 <div className="flex items-center space-x-3 mb-6">
@@ -118,6 +114,6 @@ export default function Footer() {
               <p>&copy; 2025 Require Technologies. All rights reserved.</p>
             </div>
       </div>
-    </footer>
+    </AnimatedBackground>
   )
 }

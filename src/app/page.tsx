@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import ServiceCard from '@/components/ServiceCard'
+import AnimatedBackground from '@/components/AnimatedBackground'
 // import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import AnimatedSection from '@/components/AnimatedSection'
 import GradientText from '@/components/GradientText'
@@ -45,18 +46,13 @@ export default function Home() {
       />
       
       {/* Services Section */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
                 Our <span className="text-accent">Services</span>
@@ -85,22 +81,17 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
 
         {/* CTA Section */}
-        <section 
+        <AnimatedBackground
+          imageUrl="/images/backgrounds/hero-main.jpg"
+          overlay={true}
+          overlayOpacity="60"
           className="py-20 text-white relative"
-          style={{
-            backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-          }}
         >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Ready to Transform Your Business?
@@ -131,8 +122,8 @@ export default function Home() {
               <AnimatedTechCarousel />
             </div>
           </div>
-        </div>
-      </section>
+          </div>
+        </AnimatedBackground>
 
         {/* <SophisticatedChatbot /> */}
         <Footer />

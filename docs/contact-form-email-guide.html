@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mastering Contact Forms and Email Delivery (Next.js + Resend)</title>
+    <style>
+      :root { --bg:#0b0b0b; --fg:#e5e7eb; --muted:#94a3b8; --accent:#22c55e; --card:#111318; --border:#23262d; }
+      * { box-sizing: border-box; }
+      body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background:var(--bg); color:var(--fg); }
+      .container { max-width: 920px; margin: 0 auto; padding: 40px 20px; }
+      h1, h2, h3 { line-height: 1.2; }
+      h1 { font-size: 34px; margin: 0 0 16px; }
+      h2 { font-size: 24px; margin: 32px 0 12px; }
+      h3 { font-size: 18px; margin: 24px 0 10px; }
+      p { color: var(--fg); opacity: .9; }
+      .muted { color: var(--muted); }
+      .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+      code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+      pre { background:#0f1115; border:1px solid #1f242d; color:#e2e8f0; padding:16px; border-radius:8px; overflow:auto; }
+      .kbd { border:1px solid var(--border); border-bottom-width:2px; padding:2px 6px; border-radius:6px; background: #0f1115; }
+      .grid { display:grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+      .col-6 { grid-column: span 6; }
+      .col-12 { grid-column: span 12; }
+      .toc a { color: var(--fg); text-decoration: none; }
+      .toc a:hover { text-decoration: underline; }
+      .badge { display:inline-block; padding:2px 8px; background:#122; border:1px solid #264; border-radius:999px; color:#9fe6b8; font-size:12px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mastering Contact Forms and Email Delivery (Next.js + Resend)</h1>
+      <p class="muted">A practical, production-focused guide to implement, harden, and monitor email sending from web contact forms using Next.js App Router and Resend. Includes deliverability best practices, environment setup, and debugging playbooks.</p>
+
+      <div class="card toc">
+        <h3>Table of Contents</h3>
+        <ol>
+          <li><a href="#architecture">Architecture Overview</a></li>
+          <li><a href="#resend-setup">Resend Setup</a></li>
+          <li><a href="#nextjs-api">Next.js API Route</a></li>
+          <li><a href="#frontend">Front-end Form UX</a></li>
+          <li><a href="#envs">Environment Variables</a></li>
+          <li><a href="#deliverability">Deliverability (SPF/DKIM/DMARC)</a></li>
+          <li><a href="#troubleshooting">Troubleshooting Checklist</a></li>
+          <li><a href="#playbooks">Operational Playbooks</a></li>
+          <li><a href="#security">Security and Abuse Prevention</a></li>
+          <li><a href="#templates">Reusable Templates</a></li>
+        </ol>
+      </div>
+
+      <h2 id="architecture">1) Architecture Overview</h2>
+      <p>Use a server-side API endpoint to send emails to avoid exposing secrets. The browser posts JSON to <span class="kbd">/api/contact</span>, which validates input and calls Resend.</p>
+      <pre><code>Browser (form) → POST /api/contact → Resend → Inboxes (you + autoresponder)
+      </code></pre>
+
+      <h2 id="resend-setup">2) Resend Setup</h2>
+      <ol>
+        <li>Create an account and an API key. Limit scope if possible.</li>
+        <li>For immediate testing, use <span class="badge">onboarding@resend.dev</span> as the sender.</li>
+        <li>For production, add and verify your domain. Publish DNS for DKIM/SPF/DMARC.</li>
+      </ol>
+
+      <h2 id="nextjs-api">3) Next.js API Route (App Router)</h2>
+      <p>Key points: validate input, guard env vars, await sends, and handle unknown errors safely.</p>
+      <pre><code>import { NextRequest, NextResponse } from 'next/server'
+import { Resend } from 'resend'
+
+export async function POST(req: NextRequest) {
+  try {
+    const { name, email, message } = await req.json()
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Missing fields' }, { status: 400 })
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
+    const from = 'Brand &lt;onboarding@resend.dev&gt;'
+
+    const result = await resend.emails.send({
+      from,
+      to: 'owner@example.com',
+      reply_to: email,
+      subject: `New message from ${name}`,
+      html: `<p>${message}</p>`
+    })
+
+    return NextResponse.json({ ok: true, id: result?.data?.id })
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err)
+    return NextResponse.json({ error: 'Failed', details: msg }, { status: 500 })
+  }
+}
+      </code></pre>
+
+      <h2 id="frontend">4) Front-end Form UX</h2>
+      <ul>
+        <li>Validate email client-side and server-side.</li>
+        <li>Disable the submit button while sending; show success/error notices.</li>
+        <li>Prefer accessible colors and focus rings.</li>
+      </ul>
+
+      <h2 id="envs">5) Environment Variables</h2>
+      <pre><code># .env.local (dev)
+RESEND_API_KEY=...your_key...
+RESEND_DOMAIN=yourdomain.com
+
+# Vercel → Project Settings → Environment Variables
+# Add the same keys for Production and Preview
+      </code></pre>
+
+      <h2 id="deliverability">6) Deliverability (SPF/DKIM/DMARC)</h2>
+      <ul>
+        <li><strong>SPF</strong>: Authorizes Resend to send on behalf of your domain.</li>
+        <li><strong>DKIM</strong>: Cryptographic signature proving authenticity.</li>
+        <li><strong>DMARC</strong>: Policy for how receivers treat failed SPF/DKIM.</li>
+      </ul>
+      <p>Configure these in your DNS as instructed by Resend after adding your domain.</p>
+
+      <h2 id="troubleshooting">7) Troubleshooting Checklist</h2>
+      <ul>
+        <li>Confirm API key exists in the environment (dev and prod).</li>
+        <li>For production, use your verified domain as the sender.</li>
+        <li>Check Resend dashboard logs for each request (status, errors).</li>
+        <li>Inspect Vercel function logs for runtime exceptions.</li>
+        <li>Try sending to a single recipient and plain HTML to isolate issues.</li>
+        <li>Check spam/Promotions folders; add a recognizable From name.</li>
+      </ul>
+
+      <h2 id="playbooks">8) Operational Playbooks</h2>
+      <h3>Blue/Green Sender</h3>
+      <p>Keep <span class="badge">onboarding@resend.dev</span> as a fallback sender during outages of your custom domain.</p>
+      <h3>Rate Limiting</h3>
+      <p>Throttle requests server-side to prevent abuse. Implement CAPTCHA for public forms.</p>
+
+      <h2 id="security">9) Security and Abuse Prevention</h2>
+      <ul>
+        <li>Never expose API keys to the client.</li>
+        <li>Sanitize inputs; use length limits and content checks.</li>
+        <li>Add CAPTCHA or turnstile on public endpoints.</li>
+      </ul>
+
+      <h2 id="templates">10) Reusable Snippets</h2>
+      <h3>Minimal Email</h3>
+      <pre><code>await resend.emails.send({
+  from: 'Brand &lt;onboarding@resend.dev&gt;',
+  to: 'owner@example.com',
+  subject: 'Test',
+  html: '<p>Test</p>'
+})
+      </code></pre>
+
+      <h3>Auto-reply</h3>
+      <pre><code>await resend.emails.send({
+  from: 'Brand &lt;onboarding@resend.dev&gt;',
+  to: userEmail,
+  subject: 'We received your message',
+  html: '<p>Thanks! We will reply shortly.</p>'
+})
+      </code></pre>
+    </div>
+  </body>
+</html>
+
+

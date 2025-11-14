@@ -83,6 +83,64 @@ code, pre, .font-mono {
   animation: glow 2s ease-in-out infinite;
 }
 
+/* Animated background - slow panning for 3D effect */
+@keyframes slowPan {
+  0% {
+    background-position: 0% 0%;
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    background-position: 5% 3%;
+    transform: scale(1.02) translate(-2px, -2px);
+  }
+  50% {
+    background-position: 10% 5%;
+    transform: scale(1.05) translate(-5px, -5px);
+  }
+  75% {
+    background-position: 5% 3%;
+    transform: scale(1.02) translate(-2px, -2px);
+  }
+  100% {
+    background-position: 0% 0%;
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+@keyframes slowPanReverse {
+  0% {
+    background-position: 100% 100%;
+    transform: scale(1.1) translate(0, 0);
+  }
+  25% {
+    background-position: 95% 97%;
+    transform: scale(1.12) translate(2px, 2px);
+  }
+  50% {
+    background-position: 90% 95%;
+    transform: scale(1.15) translate(5px, 5px);
+  }
+  75% {
+    background-position: 95% 97%;
+    transform: scale(1.12) translate(2px, 2px);
+  }
+  100% {
+    background-position: 100% 100%;
+    transform: scale(1.1) translate(0, 0);
+  }
+}
+
+/* Parallax background utility */
+.animated-bg {
+  animation: slowPan 30s ease-in-out infinite alternate;
+  background-size: 120% !important;
+}
+
+.animated-bg-reverse {
+  animation: slowPanReverse 40s ease-in-out infinite alternate;
+  background-size: 140% !important;
+}
+
 /* Minimalistic card styles */
 .card-minimal {
   @apply bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300;

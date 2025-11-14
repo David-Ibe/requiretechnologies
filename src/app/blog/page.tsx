@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AnimatedBackground from '@/components/AnimatedBackground'
 // import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 import Link from 'next/link'
 
@@ -38,38 +39,28 @@ export default function Blog() {
       <Header />
       
         {/* Hero Section */}
-        <section 
-          className="relative text-white min-h-screen flex items-center -mt-20 pt-20"
-          style={{
-            backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed'
-          }}
+        <AnimatedBackground
+          imageUrl="/images/backgrounds/hero-main.jpg"
+          overlay={true}
+          overlayOpacity="60"
+          className="relative text-white min-h-screen flex items-center justify-center pt-24 lg:pt-28"
         >
-          <div className="absolute inset-0 bg-black/60"></div>
-          <div className="container mx-auto px-4 text-center relative z-10 py-20">
+          <div className="container mx-auto px-4 text-center py-20">
           <h1 className="text-4xl font-bold mb-6">Blog</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Insights on digital transformation, technology solutions, and business success in West Africa.
           </p>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Filter Section */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-8 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
               <button
@@ -81,21 +72,16 @@ export default function Blog() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Featured Post */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Featured Article</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -135,21 +121,16 @@ export default function Blog() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Blog Posts Grid */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Latest Articles</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -190,21 +171,16 @@ export default function Blog() {
             ))}
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Newsletter Section */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 text-white relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Stay Updated</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
@@ -243,21 +219,16 @@ export default function Blog() {
               </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Popular Topics */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-white mb-4">Popular Topics</h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
@@ -291,7 +262,7 @@ export default function Blog() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
         {/* <SophisticatedChatbot /> */}
         <Footer />

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import AnimatedBackground from '@/components/AnimatedBackground'
 // import SophisticatedChatbot from '@/components/SophisticatedChatbot'
 // import TeamSection from '@/components/TeamSection'
 
@@ -65,18 +66,13 @@ export default function About() {
       
 
       {/* Company Overview */}
-      <section 
-        className="relative text-white min-h-screen flex items-center -mt-20 pt-20"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
+        className="relative text-white min-h-screen flex items-center justify-center pt-24 lg:pt-28"
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-6">Company Overview</h2>
             <p className="text-lg text-white leading-relaxed mb-6">
@@ -87,21 +83,16 @@ export default function About() {
             </p>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Our Capabilities */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Capabilities</h2>
             <p className="text-lg text-white text-center mb-12 max-w-4xl mx-auto">
@@ -139,21 +130,16 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Mission & Value */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Mission & Value</h2>
             
@@ -185,21 +171,16 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Contact Information */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 text-white relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8 text-white">Connect With Us</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -218,21 +199,16 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
       {/* Founder Message (Fortune 500 Standard) */}
-      <section 
+      <AnimatedBackground
+        imageUrl="/images/backgrounds/hero-main.jpg"
+        overlay={true}
+        overlayOpacity="60"
         className="py-20 relative"
-        style={{
-          backgroundImage: `url('/images/backgrounds/hero-main.jpg')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
-        }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-8">Message from Our Founder</h2>
             <div className="card-dark">
@@ -257,7 +233,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedBackground>
 
         {/* <SophisticatedChatbot /> */}
         <Footer />
